@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion/dist/framer-motion";
+// Animation
+import { motion } from "framer-motion";
 import { linkAnim } from "../animations";
 import { useScroll } from "../components/useScroll";
 
@@ -33,8 +34,12 @@ export default function Navbar() {
       <motion.li variants={linkAnim}>
         <a href="/">About Us</a>
       </motion.li>
-      <a href="/">Why preregister early</a>
-      <a href="/">Pre-registration</a>
+      <motion.li variants={linkAnim}>
+        <a href="/">Why preregister early</a>
+      </motion.li>
+      <motion.li variants={linkAnim}>
+        <a href="/">Pre-registration</a>
+      </motion.li>
     </Nav>
   );
 }
@@ -50,4 +55,21 @@ const Nav = styled.nav`
   position: sticky;
   top: 0;
   z-index: 99;
+  li {
+    list-style-type: none; // remove bullet points
+    a {
+      font-family: "proxima-nova", sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.1rem;
+      text-decoration: none; // removes underline
+      text-transform: uppercase;
+      text-align: center;
+      margin: 0 1rem;
+      transition: 0.3s ease-in-out;
+      &:hover {
+        color: green;
+      }
+    }
+  }
 `;

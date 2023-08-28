@@ -1,5 +1,10 @@
 import React from "react";
+import styled from "styled-components";
 
 export default function Hero() {
-  return <div>Hero</div>;
+  return <Container>Hero</Container>;
 }
+
+const Container = styled`
+  
+`;

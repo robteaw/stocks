@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer"; // npm install react-intersection-observer --save
-import { useAnimation } from "framer-motion/dist/framer-motion";
+import { useAnimation } from "framer-motion";
 
 export const useScroll = (thresh = 0.4) => {
   const controls = useAnimation();
