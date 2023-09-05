@@ -1,5 +1,11 @@
 import React from "react";
+import styled from "styled-components";
 
 export default function Footer() {
-  return <div>Footer</div>;
+  return <Container>Footer</Container>;
 }
+
+// styling
+const Container = styled.div`
+  height: 3rem;
+`;

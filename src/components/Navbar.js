@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import logo from "../images/logo.png";
 // Animation
 import { motion } from "framer-motion";
 import { linkAnim } from "../animations";
@@ -31,30 +32,37 @@ export default function Navbar() {
 
   return (
     <Nav as={motion.nav}>
-      <motion.li variants={linkAnim}>
-        <a href="/">About Us</a>
-      </motion.li>
-      <motion.li variants={linkAnim}>
-        <a href="/">Why preregister early</a>
-      </motion.li>
-      <motion.li variants={linkAnim}>
-        <a href="/">Pre-registration</a>
-      </motion.li>
+      <Logo as={motion.img} img src={logo}></Logo>
+      <ul>
+        <motion.li variants={linkAnim}>
+          <a href="/">About Us</a>
+        </motion.li>
+        <motion.li variants={linkAnim}>
+          <a href="/">Why preregister early</a>
+        </motion.li>
+        <motion.li variants={linkAnim}>
+          <a href="/">Pre-registration</a>
+        </motion.li>
+      </ul>
     </Nav>
   );
 }
 
 // styling
 const Nav = styled.nav`
+  background-color: white;
   height: 65px;
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 0.3rem 4vw;
   position: sticky;
   top: 0;
   z-index: 99;
+  ul {
+    display: flex;
+    padding: 0.3rem 4vw;
+  }
   li {
     list-style-type: none; // remove bullet points
     a {
@@ -72,4 +80,8 @@ const Nav = styled.nav`
       }
     }
   }
+`;
+
+const Logo = styled.img`
+  height: 3rem;
 `;
